@@ -203,4 +203,4 @@ It is also possible to show a simple gui with all the sensors data:
 ```
 Result:
 
-![jSensorsGUI](src/main/resources/image/jLibreHardwareMonitorGUI.png)
+![LOGO](src/main/resources/image/jLibreHardwareMonitorGUI.png)
