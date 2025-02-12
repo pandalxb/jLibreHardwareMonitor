@@ -38,17 +38,17 @@ public class GuiOutput {
 
 	public static void showOutput(final Map<String, String> config) {
 		EventQueue.invokeLater(() -> {
-            JSensorsGUI gui = new GuiOutput().new JSensorsGUI(config);
+            JLibreHardwareMonitorGUI gui = new GuiOutput().new JLibreHardwareMonitorGUI(config);
             gui.setVisible(true);
         });
 	}
 
 	@SuppressWarnings("serial")
-	class JSensorsGUI extends JFrame {
+	class JLibreHardwareMonitorGUI extends JFrame {
 		private Map<String, String> config;
 		private JTable table = new JTable();
 
-		public JSensorsGUI(Map<String, String> config) {
+		public JLibreHardwareMonitorGUI(Map<String, String> config) {
 			this.config = config;
 			initUI();
 		}
@@ -93,10 +93,10 @@ public class GuiOutput {
 		}
 
 		private class GuiUpdater extends SwingWorker<Void, Void> {
-			public GuiUpdater(JSensorsGUI jSensorsGUI) {
+			public GuiUpdater(JLibreHardwareMonitorGUI jLibreHardwareMonitorGUI) {
 				JScrollPane scrollPane = new JScrollPane(table);
 				table.setFillsViewportHeight(true);
-				jSensorsGUI.add(scrollPane);
+				jLibreHardwareMonitorGUI.add(scrollPane);
 
 			}
 

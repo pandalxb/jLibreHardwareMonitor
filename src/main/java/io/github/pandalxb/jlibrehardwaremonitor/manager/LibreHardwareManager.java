@@ -14,14 +14,15 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * HardwareManager
+ * LibreHardwareManager
  *
  * @author pandalxb
  */
 public class LibreHardwareManager {
     private static final Map<String, String> hardwareTypeAliasMap;
     private static final long BUFFER_SECONDS = 1;
-    private final ComputerConfig config;
+    private static LibreHardwareManager instance;
+    private ComputerConfig config;
     private Computer computer;
     private long lastUpdateTime = -1;
 
@@ -33,20 +34,36 @@ public class LibreHardwareManager {
     }
 
     private LibreHardwareManager() {
-        // default config
-        this.config = ComputerConfig.getInstance().setCpuEnabled(true);
+        new LibreHardwareManager(null);
     }
 
     private LibreHardwareManager(ComputerConfig config) {
-        this.config = config;
+        if(config == null) {
+            // default config
+            config = ComputerConfig.getInstance().setCpuEnabled(true);
+        }
+        setConfig(config);
+    }
+
+    public static LibreHardwareManager getInstance(ComputerConfig config) {
+        if(instance == null) {
+            instance = createInstance(config);
+        } else {
+            instance.setConfig(config);
+        }
+        return instance;
     }
 
     public static LibreHardwareManager createInstance() {
-        return new LibreHardwareManager();
+        return createInstance(null);
     }
 
     public static LibreHardwareManager createInstance(ComputerConfig config) {
         return new LibreHardwareManager(config);
+    }
+
+    private void setConfig(ComputerConfig config) {
+        this.config = config;
     }
 
     public Computer getComputer() {

@@ -74,8 +74,7 @@ public enum JLibreHardwareMonitor {
 		if (guiMode) {
 			GuiOutput.showOutput(overriddenConfig);
 		} else {
-			//ConsoleOutput.showOutput(overriddenConfig);
-			GuiOutput.showOutput(overriddenConfig);//test
+			ConsoleOutput.showOutput(overriddenConfig);
 		}
 	}
 }

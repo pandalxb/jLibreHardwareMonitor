@@ -27,16 +27,10 @@ import org.slf4j.LoggerFactory;
  */
 public enum PowerShellOperations {
 	GET;
-
-	private static final Logger LOGGER = LoggerFactory.getLogger(PowerShellOperations.class);
-
 	private static final PowerShell powerShell;
 
 	static {
 		powerShell = PowerShell.openSession();
-		if (OSDetector.isWindows() && !PowerShellOperations.isAdministrator()) {
-			LOGGER.warn("You have not executed jSensors in Administrator mode, so CPU temperature sensors will not be detected.");
-		}
 	}
 
 	PowerShellOperations() {
