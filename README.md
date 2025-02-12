@@ -185,7 +185,7 @@ It will retrieve a list of hardware components of your computer...
 
 ### Use as a standalone application ###
 
-First of all, download the JAR file containing all dependencies: https://repo1.maven.org/maven2/io/github/pandalxb/jLibreHardwareMonitor/1.0.1/jLibreHardwareMonitor-1.0.0-jar-with-dependencies.jar
+First of all, download the JAR file containing all dependencies: https://repo1.maven.org/maven2/io/github/pandalxb/jLibreHardwareMonitor/1.0.1/jLibreHardwareMonitor-1.0.1-jar-with-dependencies.jar
 
 Execute jLibreHardwareMonitor and get all sensors data: 
 
