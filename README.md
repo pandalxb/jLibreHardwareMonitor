@@ -145,7 +145,7 @@ To install jLibreHardwareMonitor for Maven you have just to add to your pom.xml:
      <dependency>
           <groupId>io.github.pandalxb</groupId>
           <artifactId>jLibreHardwareMonitor</artifactId>
-          <version>1.0.1</version>
+          <version>1.0.2</version>
      </dependency>
 
 
@@ -185,12 +185,12 @@ It will retrieve a list of hardware components of your computer...
 
 ### Use as a standalone application ###
 
-First of all, download the JAR file containing all dependencies: https://repo1.maven.org/maven2/io/github/pandalxb/jLibreHardwareMonitor/1.0.1/jLibreHardwareMonitor-1.0.1-jar-with-dependencies.jar
+First of all, download the JAR file containing all dependencies: https://repo1.maven.org/maven2/io/github/pandalxb/jLibreHardwareMonitor/1.0.2/jLibreHardwareMonitor-1.0.2-jar-with-dependencies.jar
 
 Execute jLibreHardwareMonitor and get all sensors data: 
 
 ```
-    java -jar jLibreHardwareMonitor-1.0.1-jar-with-dependencies.jar
+    java -jar jLibreHardwareMonitor-1.0.2-jar-with-dependencies.jar
 ```
 
 This will generate a console output. 
@@ -199,7 +199,7 @@ This will generate a console output.
 It is also possible to show a simple gui with all the sensors data:
 
 ```
-    java -jar jLibreHardwareMonitor-1.0.1-jar-with-dependencies.jar --gui
+    java -jar jLibreHardwareMonitor-1.0.2-jar-with-dependencies.jar --gui
 ```
 Result:
 
