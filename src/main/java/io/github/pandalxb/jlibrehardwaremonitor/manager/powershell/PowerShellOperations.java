@@ -17,9 +17,6 @@ package io.github.pandalxb.jlibrehardwaremonitor.manager.powershell;
 
 import io.github.pandalxb.jlibrehardwaremonitor.config.ComputerConfig;
 import io.github.pandalxb.jpowershell.PowerShell;
-import io.github.pandalxb.jlibrehardwaremonitor.util.OSDetector;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 /**
  *

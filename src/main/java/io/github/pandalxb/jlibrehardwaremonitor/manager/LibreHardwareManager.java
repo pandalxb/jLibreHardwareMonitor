@@ -6,7 +6,7 @@ import io.github.pandalxb.jlibrehardwaremonitor.manager.powershell.PowerShellOpe
 import io.github.pandalxb.jlibrehardwaremonitor.model.Computer;
 import io.github.pandalxb.jlibrehardwaremonitor.model.Hardware;
 import io.github.pandalxb.jlibrehardwaremonitor.model.Sensor;
-import org.apache.commons.collections4.CollectionUtils;
+import io.github.pandalxb.jlibrehardwaremonitor.util.CollectionUtils;
 
 import java.util.ArrayList;
 import java.util.HashMap;
