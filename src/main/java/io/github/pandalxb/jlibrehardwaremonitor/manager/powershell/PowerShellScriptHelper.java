@@ -27,13 +27,11 @@ import org.slf4j.LoggerFactory;
  * @author pandalxb
  */
 class PowerShellScriptHelper {
-	private static final Logger LOGGER = LoggerFactory.getLogger(PowerShellOperations.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(PowerShellScriptHelper.class);
 
 	private static final String LINE_BREAK = System.lineSeparator();
 
-	private static String singleLineCommand = null;
-
-	private static LibType libType;
+    private static LibType libType;
 
 	static {
 		intLibType();
@@ -181,7 +179,6 @@ class PowerShellScriptHelper {
 	}
 
 	static String getPowerShellScriptForSingleLine(ComputerConfig config) {
-		singleLineCommand = getPowerShellScript(config).replaceAll(LINE_BREAK, "");
-		return singleLineCommand;
+        return getPowerShellScript(config).replaceAll(LINE_BREAK, "");
 	}
 }

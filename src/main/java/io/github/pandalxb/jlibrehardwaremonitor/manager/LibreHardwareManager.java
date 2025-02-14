@@ -1,13 +1,18 @@
 package io.github.pandalxb.jlibrehardwaremonitor.manager;
 
 import com.google.gson.Gson;
+import com.google.gson.Strictness;
+import com.google.gson.stream.JsonReader;
 import io.github.pandalxb.jlibrehardwaremonitor.config.ComputerConfig;
 import io.github.pandalxb.jlibrehardwaremonitor.manager.powershell.PowerShellOperations;
 import io.github.pandalxb.jlibrehardwaremonitor.model.Computer;
 import io.github.pandalxb.jlibrehardwaremonitor.model.Hardware;
 import io.github.pandalxb.jlibrehardwaremonitor.model.Sensor;
 import io.github.pandalxb.jlibrehardwaremonitor.util.CollectionUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
+import java.io.StringReader;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -19,6 +24,7 @@ import java.util.Map;
  * @author pandalxb
  */
 public class LibreHardwareManager {
+    private static final Logger LOGGER = LoggerFactory.getLogger(LibreHardwareManager.class);
     private static final Map<String, String> hardwareTypeAliasMap;
     private static final long BUFFER_SECONDS = 1;
     private static LibreHardwareManager instance;
@@ -69,7 +75,16 @@ public class LibreHardwareManager {
     public Computer getComputer() {
         String jsonData = PowerShellOperations.GET.getComputerJsonData(config);
         Gson gson = new Gson();
-        return gson.fromJson(jsonData, Computer.class);
+        JsonReader reader = new JsonReader(new StringReader(jsonData));
+        reader.setStrictness(Strictness.LENIENT);
+        Computer computer;
+        try {
+            computer = gson.fromJson(reader, Computer.class);
+        } catch (Exception e) {
+            computer = new Computer();
+            LOGGER.error("gson.fromJson error:{}, jsonData:{}", e, jsonData);
+        }
+        return computer;
     }
 
     public List<Sensor> querySensors(String hardwareType, String sensorType) {
