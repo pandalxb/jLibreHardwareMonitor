@@ -1,18 +1,15 @@
 package io.github.pandalxb.jlibrehardwaremonitor.manager;
 
-import com.google.gson.Gson;
-import com.google.gson.Strictness;
-import com.google.gson.stream.JsonReader;
 import io.github.pandalxb.jlibrehardwaremonitor.config.ComputerConfig;
 import io.github.pandalxb.jlibrehardwaremonitor.manager.powershell.PowerShellOperations;
 import io.github.pandalxb.jlibrehardwaremonitor.model.Computer;
 import io.github.pandalxb.jlibrehardwaremonitor.model.Hardware;
 import io.github.pandalxb.jlibrehardwaremonitor.model.Sensor;
 import io.github.pandalxb.jlibrehardwaremonitor.util.CollectionUtils;
+import io.github.pandalxb.jlibrehardwaremonitor.util.JsonParser;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.StringReader;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -74,15 +71,16 @@ public class LibreHardwareManager {
 
     public Computer getComputer() {
         String jsonData = PowerShellOperations.GET.getComputerJsonData(config);
-        Gson gson = new Gson();
-        JsonReader reader = new JsonReader(new StringReader(jsonData));
-        reader.setStrictness(Strictness.LENIENT);
-        Computer computer;
+        Computer computer = null;
         try {
-            computer = gson.fromJson(reader, Computer.class);
+            computer = JsonParser.parseJson(jsonData);
         } catch (Exception e) {
-            computer = new Computer();
-            LOGGER.error("gson.fromJson error:{}, jsonData:{}", e, jsonData);
+            LOGGER.error("JsonParser.parseJson error:{}, jsonData:{}", e, jsonData);
+        } finally {
+            // Make sure the computer is not null
+            if(computer == null) {
+                computer = new Computer();
+            }
         }
         return computer;
     }
@@ -93,6 +91,9 @@ public class LibreHardwareManager {
             lastUpdateTime = System.currentTimeMillis();
         }
         List<Sensor> list = new ArrayList<>();
+        if(computer == null) {
+            return list;
+        }
         if(CollectionUtils.isNotEmpty(computer.getHardware())) {
             for(Hardware hardware : computer.getHardware()) {
                 if (isHardwareTypeMatch(hardware.getHardwareType(), hardwareType)) {

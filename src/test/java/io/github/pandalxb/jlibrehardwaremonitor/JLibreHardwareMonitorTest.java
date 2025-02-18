@@ -4,10 +4,12 @@ import io.github.pandalxb.jlibrehardwaremonitor.config.ComputerConfig;
 import io.github.pandalxb.jlibrehardwaremonitor.manager.LibreHardwareManager;
 import io.github.pandalxb.jlibrehardwaremonitor.model.Computer;
 import io.github.pandalxb.jlibrehardwaremonitor.model.Sensor;
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.List;
+
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.is;
 
 /**
  * author: luxb
@@ -20,7 +22,7 @@ public class JLibreHardwareMonitorTest {
         LibreHardwareManager libreHardwareManager = LibreHardwareManager.createInstance(ComputerConfig.getInstance().enableAll());
         Computer computer = libreHardwareManager.getComputer();
         System.out.println("computer:" + computer);
-        Assert.assertFalse(computer.getHardware().isEmpty());
+        assertThat("Hardware should be not null", computer.getHardware().isEmpty(), is(false));
     }
 
     @Test
@@ -29,7 +31,7 @@ public class JLibreHardwareMonitorTest {
         LibreHardwareManager libreHardwareManager = LibreHardwareManager.createInstance(ComputerConfig.getInstance().setAllEnabled(false));
         Computer computer = libreHardwareManager.getComputer();
         System.out.println("computer:" + computer);
-        Assert.assertTrue(computer.getHardware().isEmpty());
+        assertThat("Hardware should be null", computer.getHardware().isEmpty(), is(true));
     }
 
     @Test
@@ -38,7 +40,7 @@ public class JLibreHardwareMonitorTest {
         LibreHardwareManager libreHardwareManager = LibreHardwareManager.createInstance(ComputerConfig.getInstance().setCpuEnabled(true));
         List<Sensor> sensors = libreHardwareManager.querySensors("CPU", "Temperature");
         System.out.println("sensors:" + sensors);
-        Assert.assertFalse(sensors.isEmpty());
+        assertThat("Sensors should be not null", sensors.isEmpty(), is(false));
     }
 
     @Test
@@ -47,6 +49,6 @@ public class JLibreHardwareMonitorTest {
         LibreHardwareManager libreHardwareManager = LibreHardwareManager.createInstance(ComputerConfig.getInstance().setStorageEnabled(true));
         List<Sensor> sensors = libreHardwareManager.querySensors("CPU", "Temperature");
         System.out.println("sensors:" + sensors);
-        Assert.assertTrue(sensors.isEmpty());
+        assertThat("Sensors should be null", sensors.isEmpty(), is(true));
     }
 }
