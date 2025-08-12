@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>io.github.pandalxb</groupId>
 	<artifactId>jLibreHardwareMonitor</artifactId>
-	<version>1.0.5</version>
+	<version>1.0.6</version>
 	<packaging>jar</packaging>
 
 	<name>jLibreHardwareMonitor</name>
@@ -244,7 +244,7 @@
 		<dependency>
 			<groupId>${project.groupId}</groupId>
 			<artifactId>jPowerShell</artifactId>
-			<version>1.0.0</version>
+			<version>1.0.1</version>
 		</dependency>
 	</dependencies>
 
