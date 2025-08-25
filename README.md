@@ -1,206 +1,123 @@
-![](https://img.shields.io/maven-central/v/io.github.pandalxb/jLibreHardwareMonitor.svg)
-![](https://img.shields.io/github/license/pandalxb/jLibreHardwareMonitor.svg)
-![](https://img.shields.io/badge/build-passing-brightgreen.svg)
+# Help me please
 
-# jLibreHardwareMonitor
+Below are the email exchanges from my request for GitHub support, to verify that this assistance request is made by me personally.
 
-Monitor all the hardware sensors of your PC using Java by LibreHardwareMonitorLib
+Your request has been updated.
 
-The supported .NET Framework versions range from 2.0 (the minimum) to 4.7.2 and above
-
-Using bellow libraries(Automatically selecting based on .NET environment)
-
-| Library | Version | .NET                           |
-| --- |---------|--------------------------------| 
-| LibreHardwareMonitorLib.dll | 0.9.4   | .NET Framework 4.7.2 and above |
-| OpenHardwareMonitorLib.dll | 0.9.3   | .NET Framework 2.0             |
-
-#### Example Output ####
-
-    HardwareType:Motherboard, Name:Lenovo
-        SubHardwareType:SuperIO, Name:Nuvoton NCT6779D
-            SensorType:Control, Name:Fan #1, value:24.70588
-            SensorType:Control, Name:Fan #2, value:24.70588
-            SensorType:Control, Name:Fan #3, value:20.0
-            SensorType:Control, Name:Fan #4, value:100.0
-            SensorType:Control, Name:Fan #5, value:100.0
-            SensorType:Voltage, Name:Vcore, value:0.448
-            SensorType:Voltage, Name:AVCC, value:3.36
-            SensorType:Voltage, Name:+3.3V, value:3.36
-            SensorType:Voltage, Name:+3V Standby, value:3.408
-            SensorType:Voltage, Name:CPU Termination, value:1.008
-            SensorType:Temperature, Name:CPU Core, value:48.5
-            SensorType:Temperature, Name:Temperature #1, value:39.0
-            SensorType:Temperature, Name:Temperature #2, value:18.0
-            SensorType:Fan, Name:Fan #1, value:787.172
-            SensorType:Fan, Name:Fan #2, value:646.8615
-            SensorType:Fan, Name:Fan #3, value:0.0
-            SensorType:Fan, Name:Fan #4, value:0.0
-            SensorType:Fan, Name:Fan #5, value:0.0
-    HardwareType:Cpu, Name:Intel Core i5-4590
-        SensorType:Load, Name:CPU Core #1, value:66.13708
-        SensorType:Load, Name:CPU Core #2, value:61.60718
-        SensorType:Load, Name:CPU Core #3, value:58.3219
-        SensorType:Load, Name:CPU Core #4, value:61.86543
-        SensorType:Load, Name:CPU Total, value:61.98289
-        SensorType:Load, Name:CPU Core Max, value:66.13708
-        SensorType:Temperature, Name:Core Max, value:50.0
-        SensorType:Temperature, Name:Core Average, value:48.25
-        SensorType:Temperature, Name:CPU Core #1, value:50.0
-        SensorType:Temperature, Name:CPU Core #2, value:49.0
-        SensorType:Temperature, Name:CPU Core #3, value:48.0
-        SensorType:Temperature, Name:CPU Core #4, value:46.0
-        SensorType:Temperature, Name:CPU Package, value:50.0
-        SensorType:Temperature, Name:CPU Core #1 Distance to TjMax, value:50.0
-        SensorType:Temperature, Name:CPU Core #2 Distance to TjMax, value:51.0
-        SensorType:Temperature, Name:CPU Core #3 Distance to TjMax, value:52.0
-        SensorType:Temperature, Name:CPU Core #4 Distance to TjMax, value:54.0
-        SensorType:Clock, Name:CPU Core #1, value:3292.377
-        SensorType:Clock, Name:CPU Core #2, value:3292.377
-        SensorType:Clock, Name:CPU Core #3, value:3491.915
-        SensorType:Clock, Name:CPU Core #4, value:3292.377
-        SensorType:Power, Name:CPU Package, value:28.13353
-        SensorType:Power, Name:CPU Cores, value:19.21666
-        SensorType:Power, Name:CPU Memory, value:3.161473
-        SensorType:Voltage, Name:CPU Core, value:1.007202
-        SensorType:Voltage, Name:CPU Core #1, value:1.002319
-        SensorType:Voltage, Name:CPU Core #2, value:1.004761
-        SensorType:Voltage, Name:CPU Core #3, value:1.004761
-        SensorType:Voltage, Name:CPU Core #4, value:1.007202
-        SensorType:Clock, Name:Bus Speed, value:99.769
-    HardwareType:Memory, Name:Generic Memory
-        SensorType:Data, Name:Memory Used, value:15.01143
-        SensorType:Data, Name:Memory Available, value:0.9034576
-        SensorType:Load, Name:Memory, value:94.32319
-        SensorType:Data, Name:Virtual Memory Used, value:21.16336
-        SensorType:Data, Name:Virtual Memory Available, value:3.488129
-        SensorType:Load, Name:Virtual Memory, value:85.85023
-    HardwareType:GpuIntel, Name:Intel(R) HD Graphics 4600
-        SensorType:Power, Name:GPU Power, value:0.317177
-        SensorType:SmallData, Name:D3D Shared Memory Total, value:2048.0
-        SensorType:SmallData, Name:D3D Shared Memory Free, value:0.0
-        SensorType:SmallData, Name:D3D Shared Memory Used, value:122.7773
-        SensorType:Load, Name:D3D 3D, value:5.905062
-        SensorType:Load, Name:D3D Video Decode, value:0.0
-        SensorType:Load, Name:D3D Copy, value:0.0
-        SensorType:Load, Name:D3D Video Processing, value:0.0
-        SensorType:Load, Name:D3D Video Decode, value:0.0
-        SensorType:Load, Name:D3D Other, value:0.0
-        SensorType:Load, Name:D3D Overlay, value:0.0
-        SensorType:Load, Name:D3D GDI Render, value:0.0
-        SensorType:Load, Name:D3D Video Processing, value:0.0
-    HardwareType:Storage, Name:SanDisk SSD PLUS 120GB
-        SensorType:Temperature, Name:Temperature, value:26.0
-        SensorType:Load, Name:Used Space, value:80.45492
-        SensorType:Load, Name:Read Activity, value:7.486434E-5
-        SensorType:Load, Name:Write Activity, value:6.909168E-5
-        SensorType:Load, Name:Total Activity, value:99.99541
-        SensorType:Throughput, Name:Read Rate, value:0.0
-        SensorType:Throughput, Name:Write Rate, value:0.0
-    HardwareType:Storage, Name:WDC WD10EZEX-08WN4A0
-        SensorType:Temperature, Name:Temperature, value:29.0
-        SensorType:Load, Name:Used Space, value:35.65495
-        SensorType:Load, Name:Read Activity, value:3.311566E-4
-        SensorType:Load, Name:Write Activity, value:1.172971E-4
-        SensorType:Load, Name:Total Activity, value:99.99568
-        SensorType:Throughput, Name:Read Rate, value:0.0
-        SensorType:Throughput, Name:Write Rate, value:0.0
-    HardwareType:Network, Name:Ethernet
-        SensorType:Data, Name:Data Uploaded, value:8.787435
-        SensorType:Data, Name:Data Downloaded, value:17.11047
-        SensorType:Throughput, Name:Upload Speed, value:421.8286
-        SensorType:Throughput, Name:Download Speed, value:2126.538
-        SensorType:Load, Name:Network Utilization, value:0.02038693
-    HardwareType:Network, Name:VMware Network Adapter VMnet1
-        SensorType:Data, Name:Data Uploaded, value:6.874092E-6
-        SensorType:Data, Name:Data Downloaded, value:1.899898E-7
-        SensorType:Throughput, Name:Upload Speed, value:0.0
-        SensorType:Throughput, Name:Download Speed, value:0.0
-        SensorType:Load, Name:Network Utilization, value:0.0
-        HardwareType:Network, Name:VMware Network Adapter VMnet8
-        SensorType:Data, Name:Data Uploaded, value:2.784003E-5
-        SensorType:Data, Name:Data Downloaded, value:1.899898E-7
-        SensorType:Throughput, Name:Upload Speed, value:0.0
-        SensorType:Throughput, Name:Download Speed, value:0.0
-        SensorType:Load, Name:Network Utilization, value:0.0
-    HardwareType:Network, Name:VPN
-        SensorType:Data, Name:Data Uploaded, value:0.0
-        SensorType:Data, Name:Data Downloaded, value:0.0
-        SensorType:Throughput, Name:Upload Speed, value:0.0
-        SensorType:Throughput, Name:Download Speed, value:0.0
-        SensorType:Load, Name:Network Utilization, value:0.0
-    HardwareType:Network, Name:Virtual Network
-        SensorType:Data, Name:Data Uploaded, value:0.0
-        SensorType:Data, Name:Data Downloaded, value:0.0
-        SensorType:Throughput, Name:Upload Speed, value:0.0
-        SensorType:Throughput, Name:Download Speed, value:0.0
-        SensorType:Load, Name:Network Utilization, value:0.0
-
-**IMPORTANT NOTE:** if you are getting 0.0 as temperature value, try to launch as Administrator
-
-## Installation ##
-
-To install jLibreHardwareMonitor for Maven you have just to add to your pom.xml: 
-
-     <dependency>
-          <groupId>io.github.pandalxb</groupId>
-          <artifactId>jLibreHardwareMonitor</artifactId>
-          <version>1.0.6</version>
-     </dependency>
+You can add a comment by replying to this email.
 
 
-## Basic Usage ##
+frances(GitHub Support)
 
-### Use as a library ###
+Aug 25, 2025, 5:24 AM UTC
 
-In order to retrieve all sensors data, it is only necessary to call the method _getComputer()_.
+Hi again,
 
-It will retrieve a list of hardware components of your computer...
+Thanks for responding.
 
-#### Get all sensors ####
-```java
-    System.out.println("Scanning sensors data...");
-    
-    Computer computer = LibreHardwareManager.createInstance(ComputerConfig.getInstance().enableAll()).getComputer();
-    for (final Hardware hardware : computer.getHardware()) {
-        System.out.println(String.format("HardwareType:%s, Name:%s", hardware.getHardwareType(), hardware.getName()));
-        for (final Hardware subHardware : hardware.getSubHardware()) {
-            System.out.println(String.format("	SubHardwareType:%s, Name:%s", subHardware.getHardwareType(), subHardware.getName()));
-            for (final Sensor sensor : subHardware.getSensors()) {
-                System.out.println(String.format("		SensorType:%s, Name:%s, value:%s", sensor.getSensorType(), sensor.getName(), sensor.getValue()));
-            }
-        }
-        for (final Sensor sensor : hardware.getSensors()) {
-            System.out.println(String.format("	SensorType:%s, Name:%s, value:%s", sensor.getSensorType(), sensor.getName(), sensor.getValue()));
-        }
-    }
-```
+We're forwarding your ticket to another team that is better suited to assist with your enquiry.
 
-#### Get the specified sensors ####
-```java
-    LibreHardwareManager libreHardwareManager = LibreHardwareManager.createInstance(ComputerConfig.getInstance().setCpuEnabled(true));
-    List<Sensor> sensors = libreHardwareManager.querySensors("CPU", "Temperature");
-    System.out.println("sensors:" + sensors);
-```
-
-### Use as a standalone application ###
-
-First of all, download the JAR file containing all dependencies: https://repo1.maven.org/maven2/io/github/pandalxb/jLibreHardwareMonitor/1.0.6/jLibreHardwareMonitor-1.0.6-jar-with-dependencies.jar
-
-Execute jLibreHardwareMonitor and get all sensors data: 
-
-```
-    java -jar jLibreHardwareMonitor-1.0.6-jar-with-dependencies.jar
-```
-
-This will generate a console output. 
+They will review it and get back to you as soon as possible.
+Regards
+GitHub Support
 
 
-It is also possible to show a simple gui with all the sensors data:
+陆雄斌
 
-```
-    java -jar jLibreHardwareMonitor-1.0.6-jar-with-dependencies.jar --gui
-```
-Result:
+Aug 25, 2025, 5:21 AM UTC
 
-![jLibreHardwareMonitorGUI](./src/main/resources/image/jLibreHardwareMonitorGUI.png)
+However, as I mentioned earlier, this account is extremely important to me. I can prove my identity by committing code through the account already logged in to IDEA. Could you please help me explore other possible ways to regain access to the account? I promise to manage my account securely afterward. Thank you.
+
+
+♂北极熊熊
+fzuxx@qq.com
+
+
+
+------------------ 原始邮件 ------------------
+发件人:"GitHub" <support@githubsupport.com>;
+发送时间: 2025年8月25日(星期一) 中午1:15
+收件人: "♂北极熊熊"<fzuxx@qq.com>;
+主题: [GitHub Support] - I forgot my F2A credentials
+
+
+frances(GitHub Support)
+
+Aug 25, 2025, 5:15 AM UTC
+
+Hello
+
+Thanks for writing back.
+
+Our previous response(s) set out all the possible recovery options that are available to you. As described in our Terms of Service and Site Policies, GitHub Support cannot assist with account recovery: you must use an account recovery code or request a reset, and you must attempt these recovery steps yourself.
+
+If you cannot perform either of these actions, the account is unrecoverable. There are no alternative recovery pathways. GitHub Support cannot provide you with copies of any private content nor transfer any access permissions to a different account. For more information, see the GitHub Account Recovery Policy.
+
+If your email address is associated with the account, you can disconnect it. Disconnecting an email address will allow you to use it with another account, but does not transfer any access permissions or private content. To get started, follow these steps to unlink your email address.
+Regards
+GitHub Support
+
+
+陆雄斌
+
+Aug 25, 2025, 5:09 AM UTC
+
+I previously downloaded the github-recovery-codes.txt file, but I can't find it now. Additionally, I recently replaced my phone, and the reinstalled Authenticator app cannot scan to log in to my GitHub account. I don't want to unbind my email, as this account is very important to me. Could you please help me disable 2FA to regain access to my account?
+
+
+♂北极熊熊
+fzuxx@qq.com
+
+
+
+------------------ 原始邮件 ------------------
+发件人:"GitHub" <support@githubsupport.com>;
+发送时间: 2025年8月25日(星期一) 中午11:04
+收件人: "♂北极熊熊"<fzuxx@qq.com>;
+主题: [GitHub Support] - I forgot my F2A credentials
+
+
+GitHub(GitHub Support)
+
+Aug 25, 2025, 3:04 AM UTC
+
+Hi 陆雄斌,
+
+It sounds like you're having trouble with two-factor authentication (2FA). We'll set out your options below, but if you have a different problem, just reply and we'll take another look.
+
+If you don't have access to any of your 2FA methods and can't sign-in, you'll need to use an account recovery code or try requesting a reset. GitHub Support is unable to help with account recovery.
+
+Using an account recovery code
+
+When you setup 2FA, you downloaded a set of emergency account recovery codes that can be used to access the account when you lose your main 2FA methods. Even if you think you might not have them, you may have saved your recovery codes to a password manager or somewhere on one of your devices. The default filename for these codes is github-recovery-codesor github-recovery-codes.txt.
+
+Finding these codes may be your only way to get back into the account. For more information about using a recovery code, see Using a two-factor authentication recovery code.
+
+Requesting a reset
+
+You can try requesting a reset. Unlike account recovery codes, the ability to request a reset depends on whether or not you've used certain access methods recently, such as a verified device, SSH key, or personal access token. You can check what options are available to you after signing in or verifying an email address. GitHub Support can't check this or submit a request for you. For more information, see Authenticating with a verified device, SSH token, or personal access token.
+
+Reclaiming your email address
+
+If you can't use a recovery code or submit a recovery request yourself, the account is not recoverable. Our approach to account recovery is outlined in the GitHub Account Recovery Policyand can't be modified. GitHub Support cannot grant an exception to this policy.
+
+In this situation, you can disconnect your email address from the account yourself which will let you use it with another one. You can get started with unlinking your email address.
+
+Other content from the account – including repositories, Gists, access permissions, and the account username – are not transferrable to a different account. Commits authored by your email address will be re-connected to your new account, but there may be additional stepsrequired for those commits to appear on your new contribution graph.
+
+Getting help with something else
+
+If you need help with another 2FA issue, such as unlinking your email address from an account for which you don't know the password, ending a paid subscription on an unrecoverable account, or closing a GitHub Sponsors profile, reply here with details of your issue and we'll be happy to help.
+
+Thanks,
+GitHub Support
+
+
+陆雄斌
+
+Aug 25, 2025, 1:26 AM UTC
+
+Account Name: pandalxb https://github.com/pandalxb
+Account Email: fzuxx@qq.com
+
+I forgot my F2A credentials and can't login my account. Please help me.
